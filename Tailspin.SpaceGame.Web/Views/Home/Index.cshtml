@@ -1,4 +1,4 @@
-﻿@model TailSpin.SpaceGame.Web.Models.LeaderboardViewModel
+@model TailSpin.SpaceGame.Web.Models.LeaderboardViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -33,8 +33,8 @@
         <a name="leaderboard"></a>
         <h2>Space leaders</h2>
 
-        @if (Model.ErrorMessage == null)
-        {
+        
+        
             <!-- Start Leaderboard table -->
             <div class="row">
                 <div class="col-sm-9 leader-scores">
@@ -193,28 +193,7 @@
                 </div>
             </div>
             <!-- End Leaderboard -->
-        }
-        else
-        {
-            <div class="bg-warning text-left">
-                <h2>There was an error retrieving the leaderboard from the remote service.</h2>
-                <p>This is most likely due to one or more of the following reasons:</p>
-                <div class="entry-content">
-                    <ol>
-                        <li>The remote leaderboard service is not deployed correctly</li>
-                        <li>The remote leaderboard service is not running</li>
-                        <li>This web app is not configured for the correct LeaderboardFunctionUrl URL (see appsettings.json)</li>
-                    </ol>
-                </div>
-
-                <div class="well">
-                    @foreach (string line in Model.ErrorMessage.Split("\r\n"))
-                    {
-                        <p>@line</p>
-                    }
-                </div>
-            </div>
-        }
+        
     </div>
 </section>
 
